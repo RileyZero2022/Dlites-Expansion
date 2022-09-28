@@ -15,7 +15,7 @@ function s.initial_effect(c)
 	e1:SetTarget(s.eqtg)
 	e1:SetOperation(s.eqop)
 	c:RegisterEffect(e1)
-	aux.AddEREquipLimit(c,nil,s.eqval,aux.EquipByEffectAndLimitRegister,e1)
+	aux.AddEREquipLimit(c,nil,s.eqval,Card.EquipByEffectAndLimitRegister,e1)
 	--Gain attack
  	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_SINGLE)
@@ -44,7 +44,7 @@ function s.eqval(ec,c,tp)
 	return ec:IsControler(tp) and (aux.IsCodeListed(c,72283691)) and ec:IsMonster()
 end
 function s.filter(c)
-	return (aux.IsCodeListed(c,72283691)) and c:IsMonster() and not c:IsForbidden()
+	return (Card.ListsCode(c,72283691)) and c:IsMonster() and not c:IsForbidden()
 end
 function s.eqcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_SYNCHRO)
