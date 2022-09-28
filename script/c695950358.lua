@@ -68,7 +68,7 @@ function s.eqop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.BreakEffect()
 	for tc in tg:Iter() do
 		if Duel.Equip(tp,tc,c) then
-		aux.EquipByEffectAndLimitRegister(c,e,tp,tc)
+		Card.EquipByEffectAndLimitRegister(c,e,tp,tc)
 	end
   end
 end
